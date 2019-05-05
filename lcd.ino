@@ -5,7 +5,7 @@ int clk = 12;
 int reset = 11;
 int disable = 10;
 
-int delayTime = 400;
+int delayTime = 1000;
 int index = 1;
 
 bool lcdEnable = true;
@@ -92,6 +92,7 @@ void setup() {
   initLcd();
   writeLcd(4, false, false, 8);
   writeLcd(4, false, false, 9);
+  digitalWrite(disable, HIGH);
 }
 
 int upState = 0;

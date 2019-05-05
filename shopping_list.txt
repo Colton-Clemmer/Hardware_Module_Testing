@@ -1,0 +1,7 @@
+stm32 microcontrollers
+m to m connector pins
+1K resistors
+capacitors for crystal
+temperature sensors
+wifi controllers
+Main power relay
