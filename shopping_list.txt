@@ -5,3 +5,6 @@ capacitors for crystal
 temperature sensors
 wifi controllers
 Main power relay
+IR sensors TX/RX
+Potentiometer
+Servos

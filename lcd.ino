@@ -1,9 +1,14 @@
+#include <ShiftRegister74HC595.h>
+
 // Pin 13 has an LED connected on most Arduino boards.
 // give it a name:
 int serial = 13;
 int clk = 12;
 int reset = 11;
 int disable = 10;
+
+// create shift register object (number of shift registers, data pin, clock pin, latch pin)
+ShiftRegister74HC595 sr (3, 13, 12, 2);
 
 int delayTime = 1000;
 int index = 1;
@@ -78,26 +83,30 @@ void initLcd() {
 }
 
 // the setup routine runs once when you press reset:
-void setup() {                
+void setup() {                 
   // initialize the digital pin as an output.
-  pinMode(serial, OUTPUT);
-  pinMode(clk, OUTPUT);
-  pinMode(reset, OUTPUT);
-  pinMode(disable, OUTPUT);
+  // pinMode(serial, OUTPUT);
+  // pinMode(clk, OUTPUT);
+  // pinMode(reset, OUTPUT);
+  // pinMode(disable, OUTPUT);
   
-  digitalWrite(disable, LOW);
-  digitalWrite(clk, LOW);
-  resetRegister();
-  writeByte(1);
-  initLcd();
-  writeLcd(4, false, false, 8);
-  writeLcd(4, false, false, 9);
-  digitalWrite(disable, HIGH);
+  // digitalWrite(disable, LOW);
+  // digitalWrite(clk, LOW);
+  // resetRegister();
+  // writeByte(1);
+  // initLcd();
+  // writeLcd(4, false, false, 8);
+  // writeLcd(4, false, false, 9);
+  // digitalWrite(disable, HIGH);
 }
 
 int upState = 0;
 
 // the loop routine runs over and over again forever:
 void loop() {
+  sr.setAllHigh(); // set all pins HIGH
+  delay(10);
   
+  sr.setAllLow(); // set all pins LOW
+  delay(10);
 }
